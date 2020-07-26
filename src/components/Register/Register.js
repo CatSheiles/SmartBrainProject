@@ -31,7 +31,7 @@ class Register extends React.Component {
         })
         .then(response => response.json())
             .then(user => {
-                if(user) {
+                if(user.id) {
                     this.props.loadUser(user)
                     this.props.onRouteChange('home');
                 }
@@ -79,7 +79,9 @@ class Register extends React.Component {
                     <div className="">
                         <input 
                             onClick={this.onSubmitSignIn}
-                            className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Register"/>
+                            className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
+                            type="submit"
+                            value="Register"/>
                     </div>
                     </div>
                 </main>
